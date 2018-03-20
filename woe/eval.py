@@ -49,7 +49,11 @@ def eval_feature_detail(Info_Value_list,out_path=False):
         # merge into dataframe
         columns = ['var_name','split_list','sub_total_sample_num','positive_sample_num'
             ,'negative_sample_num','sub_total_num_percentage','positive_rate_in_sub_total'
-            ,'woe_list','iv_list','iv']
+            ,'woe_list','iv_list','iv'
+            ,'weight_freq','weight_positive_freq','weight_negative_freq'
+            ,'cum_weight_freq','cum_weight_positive_freq','cum_weight_negative_freq'
+            ,'total_weight_freq','total_weight_positive_freq','total_weight_negative_freq'
+            ,'perc_cum_weight_freq','perc_cum_weight_positive_freq','perc_cum_weight_negative_freq']
         rowcnt = len(rst[kk].iv_list)
         if rowcnt < len(split_list):
             split_list = split_list[:rowcnt]
@@ -63,7 +67,19 @@ def eval_feature_detail(Info_Value_list,out_path=False):
                              ,'positive_sample_num':rst[kk].positive_sample_num,'negative_sample_num':rst[kk].negative_sample_num
                              ,'sub_total_num_percentage':rst[kk].sub_total_num_percentage
                              ,'positive_rate_in_sub_total':rst[kk].positive_rate_in_sub_total
-                             ,'negative_rate_in_sub_total':rst[kk].negative_rate_in_sub_total},columns=columns)
+                             ,'negative_rate_in_sub_total':rst[kk].negative_rate_in_sub_total
+                             ,'weight_freq':rst[kk].weight_freq
+                             ,'weight_positive_freq':rst[kk].weight_positive_freq
+                             ,'weight_negative_freq':rst[kk].weight_negative_freq
+                             ,'cum_weight_freq':rst[kk].cum_weight_freq
+                             ,'cum_weight_positive_freq':rst[kk].cum_weight_positive_freq
+                             ,'cum_weight_negative_freq':rst[kk].cum_weight_negative_freq
+                             ,'total_weight_freq':rst[kk].total_weight_freq
+                             ,'total_weight_positive_freq':rst[kk].total_weight_positive_freq
+                             ,'total_weight_negative_freq':rst[kk].total_weight_negative_freq
+                             ,'perc_cum_weight_freq':rst[kk].perc_cum_weight_freq
+                             ,'perc_cum_weight_positive_freq':rst[kk].perc_cum_weight_positive_freq
+                             ,'perc_cum_weight_negative_freq':rst[kk].perc_cum_weight_negative_freq},columns=columns)
         format_rst.append(a)
 
     # merge dataframe list into one dataframe vertically

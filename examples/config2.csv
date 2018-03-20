@@ -24,3 +24,4 @@ PAY_AMT4,int64,0,1,1
 PAY_AMT5,int64,0,1,1
 PAY_AMT6,int64,0,1,1
 target,int64,0,0,0
+weight,int64,0,0,0
